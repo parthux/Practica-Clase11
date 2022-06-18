@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="shortcut icon" href="icon/favicon.svg">
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script> <!--Icons de la web https://boxicons.com/?query= -->
+    <title>Registrarse</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Parcial 1</h1>
+    </header>
+    <nav class="nav-container">
+        <div class="nav__hamburguesa" id="navMenu">
+            <input type="checkbox" id="menu" name="menu" class="nav__input-menu">
+            <label for="menu" class="nav__label">
+                <div class="nav__img-linea" id="lineOne"></div>
+                <div class="nav__img-linea" id="lineTwo"></div>
+                <div class="nav__img-linea" id="lineThree"></div>
+            </label>
+        </div>
+        <div class="nav__links" id="navLinks">
+            <a href="" class="nav__link">
+                Inicio
+            </a>
+            <a href="#" class="nav__link">
+                Registrarse
+            </a>
+            <a href="" class="nav__link">
+                Contacto
+            </a>
+        </div>
+    </nav>
+    <div class="flex-container">
+        <main class="main">
+            <form action="" class="form" id="formRegistration">
+                <h3 class="form__title">Registro</h3>
+                <fielset class="form__fielset" id="fielsetName">
+                    <label for="name" class="form__label">Nombre:</label>
+                    <div class="form__input-icon">
+                        <input type="text" class="form__input" id="name" name="name" placeholder="Nombre porfavor.">
+                        <box-icon type='solid' name='x-circle' class="form__validation-estado"></box-icon>
+                    </div>
+                    <p class="form__paragraph-valitacion">
+                        El Nombre debe tener mas de 3 letras.
+                    </p>
+                </fielset>
+                <fielset class="form__fielset" id="fielsetSurname">
+                    <label for="surname" class="form__label">Apellido:</label>
+                    <div class="form__input-icon">
+                        <input type="text" class="form__input" id="surname" name="surname" placeholder="Apellido porfavor.">
+                        <box-icon type='solid' name='x-circle' class="form__validation-estado"></box-icon>
+                    </div>
+                    <p class="form__paragraph-valitacion">
+                        El Apellido debe tener mas de 3 letras.
+                    </p>
+                </fielset>
+                <fielset class="form__fielset" id="fielsetEmail">
+                    <label for="useremail" class="form__label">Email:</label>
+                    <div class="form__input-icon">
+                        <input type="text" class="form__input" id="useremail" name="useremail" placeholder="Email porfavor.">
+                        <box-icon type='solid' name='x-circle' class="form__validation-estado"></box-icon>
+                    </div>
+                    <p class="form__paragraph-valitacion">
+                        El Email ingresado no es valido.
+                    </p>
+                </fielset>
+                <fielset class="form__fielset" id="fielsetAge">
+                    <label for="age" class="form__label">Edad:</label>
+                    <div class="form__input-icon">
+                        <input type="text" class="form__input" id="age" name="age" placeholder="Edad porfavor.">
+                        <box-icon type='solid' name='x-circle' class="form__validation-estado"></box-icon>
+                    </div>
+                    <p class="form__paragraph-valitacion">
+                        La Edad ingresada no es valida.
+                    </p>
+                </fielset>
+                <fielset class="form__fielset" id="fielsetSexo">
+                    <label for="sexo" class="form__label">Sexo:</label>
+                    <ul class="form__lists">
+                        <li class="form__list">
+                            <input type="radio" name="sexo" value="mujer" class="form__input form__input--action">Mujer
+                        </li>
+                        <li class="form__list">
+                            <input type="radio" name="sexo" value="hombre" class="form__input form__input--action">Hombre
+                        </li>
+                        <li class="form__list">
+                            <input type="radio" name="sexo" value="otro" class="form__input form__input--action">Otro
+                        </li>
+                    </ul>
+                    <p class="form__paragraph-valitacion">
+                        Porfavor Seleccione una de las opciones presentadas.
+                    </p>
+                </fielset>
+                <fielset class="form__fielset" id="fielsetTemas">
+                    <label for="temasInteres" class="form__label">Temas de Interés:</label>
+                    <ul class="form__lists">
+                        <li class="form__list">
+                            <input type="checkbox" name="temasInteres" value="musica" class="form__input form__input--action">Música
+                        </li>
+                        <li class="form__list">
+                            <input type="checkbox" name="temasInteres" value="deporte" class="form__input form__input--action">Deporte
+                        </li>
+                        <li class="form__list">
+                            <input type="checkbox" name="temasInteres" value="juegos" class="form__input form__input--action">Juegos
+                        </li>
+                        <li class="form__list">
+                            <input type="checkbox" name="temasInteres" value="tecnologia" class="form__input form__input--action">Tecnología
+                        </li>
+                        <li class="form__list">
+                            <input type="checkbox" name="temasInteres" value="otro" class="form__input form__input--action">Otro
+                        </li>
+                    </ul>
+                    <p class="form__paragraph-valitacion">
+                        Porfavor Seleccione almenos una o mas de las opciones presentadas.
+                    </p>
+                </fielset>
+                <fielset class="form__fielset" id="fielsetPais">
+                    <label for="pais" class="form__label form__label--action">Pais:</label>
+                    <select name="pais" id="pais" class="form__select-pais">
+                        <option>Seleccione un País</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="chile">Chile</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="uruguay">Uruguay</option>
+                    </select>
+                    <p class="form__paragraph-valitacion">
+                        Porfavor seleccione una opcion valida.
+                    </p>
+                </fielset>
+                <fielset class="form__fielset  form__fielset--action" id="fielsetComentario">
+                    <label for="comentario" class="form__label">Comentario:</label>
+                    <textarea name="comentario" id="comentario" rows="5" placeholder="Escribe un comentario" class="form__textarea"></textarea>
+                </fielset>
+                <div class="form__enviar form__enviar--action" id="divButtomEnviar">
+                    <p class ="form__paragraph-buttom">
+                        <box-icon name='error' class="form__icon-error"></box-icon> <span class="form__error">Error:</span> Porfavor completa él o los campos que faltan.
+                    </p>
+                    <button type="submit" class="form__button">Enviar</button>
+                </div>
+            </form>
+        </main>
+        <aside class="aside">
+            <div class="aside__publicity">
+                <a href="https://www.coca-cola.com.ar/" class="aside__btn-publicity aside__btn-publicity-action">
+                    <img src="img/por-que---no-hay-por-que.jpg" alt="" class="aside__publicity-img">
+                </a>
+            </div>
+            <div class="aside__publicity">
+                <a href="https://www.claro.com.ar/personas" class="aside__btn-publicity">
+                    <img src="img/claro-navidad-gratis.gif" alt="" class="aside__publicity-img">
+                </a>
+            </div>
+            <div class="aside__publicity">
+                <a href="https://mobile.twitter.com/ganacenas" class="aside__btn-publicity">
+                    <img src="img/FSmkT9-X0AAEpl9.jpg" alt="" class="aside__publicity-img">
+                </a>
+            </div>
+        </aside>
+    </div>
+    <div class="pop-ups" id="pop-ups">
+        <div class="pop-ups__container" id="pop-ups__container">
+            <div class="pop-ups__header">
+                <input type="checkbox" name="endpopups" id="endpopups" class="pop-ups__input">
+                <label for="endpopups" class="pop-ups__label">
+                    <box-icon name='x' class="pop-ups__icon"></box-icon>
+                </label>
+            </div>
+            <div class="pop-ups__header-body">
+                <img src="img/undraw_publish_post_re_wmql.svg" alt="" class="pop-ups__img">
+                <h4 class="pop-ups__title">
+                    ¡Se ha registrado con exito!
+                </h4>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <script src="js/validation.js"></script>
+        <div class="footer__row">
+            <h3 class="footer__title">
+                Copyright 2022 Parcial 1 | Todos los derechos reservados
+            </h3>
+        </div>
+        <div class="footer__row">
+            <div class="footer__redes">
+                <a href="" class="footer__rede">
+                    <img src="icon/twitter.svg" alt="" class="footer__logo">
+                </a>
+                <a href="" class="footer__rede">
+                    <img src="icon/facebook.svg" alt="" class="footer__logo">
+                </a>
+                <a href="" class="footer__rede">
+                    <img src="icon/instagram.svg" alt="" class="footer__logo">
+                </a>
+                <a href="" class="footer__rede">
+                    <img src="icon/youtube.svg" alt="" class="footer__logo">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

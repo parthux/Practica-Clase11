@@ -1,0 +1,12 @@
+/*Animation Menu Hamburguesa - aside - footer redes - buttom-enviar - pop-ups */
+.footer__logo:hover, .aside__publicity-img:hover, .form__button:hover, .nav__link:hover, .pop-ups__label:hover{
+    transition: 0.5s;
+    transform: scale(0.9);
+}
+/*Animation Menu Hamburguesa - aside - footer redes - buttom-enviar - pop-ups end */
+/*Animation Form__Input */
+.form__input:focus{
+    outline: none;
+    border-bottom: 1px solid black;
+}
+/*Animation Form__Input end */
