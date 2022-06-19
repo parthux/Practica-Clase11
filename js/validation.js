@@ -154,7 +154,7 @@ form.addEventListener('submit', (e) => {
         Object.entries(checksubmit).forEach(([key]) => {
             checksubmit[key] = false;
           });
-        fetch(`https://curso-dev-2021.herokuapp.com/newsletter?&surname=${dataPersistence.surname}&email=${dataPersistence.useremail}&age=${dataPersistence.age}`)
+        fetch(`https://curso-dev-2021.herokuapp.com/newsletter?name=${dataPersistence.name}&surname=${dataPersistence.surname}&email=${dataPersistence.useremail}&age=${dataPersistence.age}`)
         .then((resolve) => {
             return(resolve.json());
         })
