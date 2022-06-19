@@ -23,6 +23,12 @@ const checksubmit = {
     pais: false,
     tema: false
 };
+const dataPersistence ={
+    name:'',
+    surname:'',
+    useremail:'',
+    age:''
+}
 const datos = (temp, nameFielset) =>{
     if(temp == true){
         document.getElementById(`${nameFielset}`).classList.remove('form__fielset-incorrecto');
@@ -52,6 +58,7 @@ const  validarFormulario = (e) =>{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
                 checksubmit.name =true;
+                dataPersistence.name = e.target.value;
             }else{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
@@ -64,6 +71,7 @@ const  validarFormulario = (e) =>{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
                 checksubmit.surname =true;
+                dataPersistence.surname = e.target.value;
             }else{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
@@ -77,6 +85,7 @@ const  validarFormulario = (e) =>{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
                 checksubmit.useremail =true;
+                dataPersistence.useremail = e.target.value;
             }else{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
@@ -90,6 +99,7 @@ const  validarFormulario = (e) =>{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
                 checksubmit.age =true;
+                dataPersistence.age = e.target.value;
             }else{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
@@ -142,14 +152,7 @@ form.addEventListener('submit', (e) => {
         document.querySelectorAll('.form__fielset-correcto').forEach((x) =>{
             x.classList.remove('form__fielset-correcto');
         });
-        const resetObject = false;
-        checksubmit.name= resetObject;
-        checksubmit.age= resetObject;
-        checksubmit.pais= resetObject;
-        checksubmit.sexo= resetObject;
-        checksubmit.surname= resetObject;
-        checksubmit.tema= resetObject;
-        checksubmit.useremail= resetObject;
+
         document.getElementById('pop-ups').classList.add('pop-ups--action');
     }else{
         document.querySelector('#divButtomEnviar .form__paragraph-buttom').classList.add('form__paragraph-buttom--action');
@@ -190,7 +193,7 @@ form.addEventListener('submit', (e) => {
     }
 });
 
-//pop-ups
+//Event pop-ups
 
 const popUps = document.getElementById('endpopups');
 popUps.addEventListener('click', () =>{
