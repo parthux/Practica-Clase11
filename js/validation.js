@@ -1,5 +1,3 @@
-"use Strict"; //javascrip moderno On
-
 //Menu Hamburguesa
 const menuHamburguesa = document.getElementById('menu');
 menuHamburguesa.addEventListener('click', () => {
@@ -8,9 +6,7 @@ menuHamburguesa.addEventListener('click', () => {
     document.getElementById('lineTwo').classList.toggle('nav__img-linea--2');
     document.getElementById('lineThree').classList.toggle('nav__img-linea--3');
 });
-
-//ValidationFormulario
-
+//Validation Form
 const form = document.getElementById('formRegistration');
 const formInpust = document.querySelectorAll('input');
 const selectPais = document.getElementById('pais');
@@ -138,12 +134,15 @@ const  validarFormulario = (e) =>{
         break;
     }
 };
+//event inputs
 formInpust.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
     input.addEventListener('change', validarFormulario);
 });
+//event select html
 selectPais.addEventListener('change', validarFormulario);
+//evento submit form
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     if (checksubmit.name == true && checksubmit.surname == true && checksubmit.useremail == true && checksubmit.age == true  && checksubmit.sexo == true && checksubmit.pais == true && checksubmit.tema == true){
@@ -152,8 +151,51 @@ form.addEventListener('submit', (e) => {
         document.querySelectorAll('.form__fielset-correcto').forEach((x) =>{
             x.classList.remove('form__fielset-correcto');
         });
-
-        document.getElementById('pop-ups').classList.add('pop-ups--action');
+        Object.entries(checksubmit).forEach(([key]) => {
+            checksubmit[key] = false;
+          });
+        fetch(`https://curso-dev-2021.herokuapp.com/newsletter?name=${dataPersistence.name}&surname=${dataPersistence.surname}&email=${dataPersistence.useremail}&age=${dataPersistence.age}`)
+        .then((resolve) => {
+            return(resolve.json());
+        })
+        .then((resolveJson) => {
+            const popusBody = document.querySelector('#pop-ups .pop-ups__header-body');
+            if (document.querySelector('.pop-ups__header-body p') != null){
+                document.querySelectorAll('.pop-ups__header-body p').forEach((p)=>{
+                    p.remove();
+                })
+            }
+            let arrayObjectResolve = Object.keys(resolveJson);
+            for (let i = 0; i < arrayObjectResolve.length; i++){
+                const elemenParagraph = document.createElement('p');
+                elemenParagraph.textContent = `${arrayObjectResolve[i]}: ${resolveJson[arrayObjectResolve[i]]}`;
+                popusBody.appendChild(elemenParagraph);
+              }
+            document.querySelector('#pop-ups .pop-ups__img').setAttribute('src','img/undraw_publish_post_re_wmql.svg');
+            document.querySelectorAll('#pop-ups .pop-ups__title').forEach((h) =>{
+                h.classList.remove('pop-ups__title--hidden');
+            });
+            document.getElementById('pop-ups').classList.add('pop-ups--action');
+          })
+        .catch((error) => {
+            document.querySelector('#pop-ups .pop-ups__img').setAttribute('src','img/error.webp');
+            document.querySelectorAll('#pop-ups .pop-ups__title').forEach((h) =>{
+                h.classList.add('pop-ups__title--hidden');
+            });
+            if (document.querySelector('.pop-ups__header-body h4') != null){
+                document.querySelectorAll('.pop-ups__header-body h4').forEach((h)=>{
+                h.remove();
+            });
+            };
+            const errorMessage = document.querySelector('#pop-ups .pop-ups__header-body');
+            const elemenParagraphError = document.createElement('h4');
+            elemenParagraphError.textContent = error;
+            errorMessage.appendChild(elemenParagraphError);
+            document.getElementById('pop-ups').classList.add('pop-ups--action');
+        })
+        .finally(Object.entries(dataPersistence).forEach(([key]) => {
+            dataPersistence[key] = '';
+        }));
     }else{
         document.querySelector('#divButtomEnviar .form__paragraph-buttom').classList.add('form__paragraph-buttom--action');
         let enviarTemp = false;
@@ -192,14 +234,11 @@ form.addEventListener('submit', (e) => {
         };
     }
 });
-
 //Event pop-ups
-
 const popUps = document.getElementById('endpopups');
 popUps.addEventListener('click', () =>{
     document.getElementById('pop-ups').classList.remove('pop-ups--action');
 })
-
 window.addEventListener('click', () =>{
     document.getElementById('pop-ups').classList.remove('pop-ups--action');
 })
