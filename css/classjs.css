@@ -1,0 +1,45 @@
+/* Class javascript start */
+.nav__link--action{
+    display: flex;
+}
+.form__fielset-correcto .form__validation-estado{
+    fill: green;
+    display: block;
+}
+.form__fielset-correcto .form__input{
+    border-bottom: 1px solid green;
+}
+.form__fielset-incorrecto .form__label{
+    color: red;
+}
+.form__fielset-correcto .form__label{
+    color: green;
+}
+.form__fielset-incorrecto .form__validation-estado{
+    fill: red;
+    display: block;
+}
+.form__fielset-incorrecto .form__input{
+    border-bottom: 1px solid red;
+}
+.form__paragraph-valitacion--action, .form__paragraph-buttom--action{
+    display: block;
+}
+.pop-ups--action{
+    display: flex;
+}
+.nav__img-linea--1{
+    transform: rotate(-45deg);
+    position: absolute;
+}
+.nav__img-linea--2{
+    opacity: 0;
+}
+.nav__img-linea--3{
+    transform: rotate(45deg);
+    position: absolute;
+}
+.pop-ups__title--hidden{
+    display: none;
+}
+/* Class javascript end */
