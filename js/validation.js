@@ -58,6 +58,7 @@ const  validarFormulario = (e) =>{
             }else{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
+                checksubmit.name =false;
             }
         break;
         case "surname":
@@ -71,6 +72,7 @@ const  validarFormulario = (e) =>{
             }else{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
+                checksubmit.surname =false;
             }
         break;
         case "useremail":
@@ -85,6 +87,7 @@ const  validarFormulario = (e) =>{
             }else{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
+                checksubmit.useremail =false;
             }
         break;
         case "age":
@@ -99,6 +102,7 @@ const  validarFormulario = (e) =>{
             }else{
                 datos(temp, nameFielset);
                 datos2(temp, nameFielset);
+                checksubmit.age =false;
             }
         break;
         case "sexo":
@@ -109,6 +113,7 @@ const  validarFormulario = (e) =>{
                 checksubmit.sexo =true;
             }else{
                 datos(temp, nameFielset);
+                checksubmit.sexo =false;
             }
         break;
         case "temasInteres":
@@ -120,6 +125,7 @@ const  validarFormulario = (e) =>{
                 datos(temp, nameFielset);
             }else{
                 datos(temp, nameFielset);
+                checksubmit.tema =false;
             }
         break;
         case "pais":
@@ -130,6 +136,7 @@ const  validarFormulario = (e) =>{
                 checksubmit.pais =true;
             }else{
                 datos(temp, nameFielset);
+                checksubmit.pais =false;
             }
         break;
     }
